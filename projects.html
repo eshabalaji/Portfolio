@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Projects | Esha Balaji Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif; 
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    }
+    
+    .gradient-text {
+      background: linear-gradient(135deg, #00F5D4 0%, #00c9b9 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .project-card {
+      background: linear-gradient(145deg, #151517 0%, #1a1a1c 100%);
+      border: 1px solid rgba(0, 245, 212, 0.3);
+      backdrop-filter: blur(10px);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .project-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 245, 212, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    
+    .project-card:hover::before {
+      left: 100%;
+    }
+    
+    .project-card:hover {
+      transform: translateY(-12px) rotateX(5deg);
+      box-shadow: 0 25px 50px rgba(0, 245, 212, 0.3);
+      border-color: #00F5D4;
+    }
+    
+    .tech-tag {
+      background: linear-gradient(135deg, #00F5D4 0%, #00c9b9 100%);
+      transform: scale(1);
+      transition: transform 0.2s ease;
+    }
+    
+    .tech-tag:hover {
+      transform: scale(1.05);
+    }
+    
+    .floating-element {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-10px); }
+    }
+    
+    .pulse-ring {
+      animation: pulse-ring 2s infinite;
+    }
+    
+    @keyframes pulse-ring {
+      0% { transform: scale(1); opacity: 1; }
+      80%, 100% { transform: scale(1.2); opacity: 0; }
+    }
+    
+    .stagger-animation {
+      animation: staggerIn 0.6s ease-out forwards;
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    
+    @keyframes staggerIn {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    .project-number {
+      background: linear-gradient(135deg, #00F5D4, #007a6b);
+      background-clip: text;
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 800;
+      font-size: 4rem;
+      opacity: 0.1;
+      position: absolute;
+      top: -10px;
+      right: 15px;
+      z-index: 1;
+    }
+    
+    .github-btn {
+      background: linear-gradient(135deg, #00F5D4 0%, #00c9b9 100%);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .github-btn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.5s;
+    }
+    
+    .github-btn:hover::before {
+      left: 100%;
+    }
+    
+    .github-btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(0, 245, 212, 0.4);
+    }
+  </style>
+</head>
+<body class="text-[#f4f4f4] min-h-screen">
+
+  <!-- Navbar -->
+  <nav class="bg-black/80 backdrop-blur-md border-b border-[#00F5D4]/20 fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-[#00F5D4]">Esha Balaji</h1>
+      <div class="space-x-8">
+        <a href="index.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          Home
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="about.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          About
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="education.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          Education
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="projects.html" class="text-[#00F5D4] font-bold relative">
+          Projects
+          <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#00F5D4]"></span>
+        </a>
+        <a href="experience.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          Experience
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="certifications.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          Certifications
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <main class="pt-32 max-w-7xl mx-auto px-6 pb-16">
+    <!-- Hero Section -->
+    <header class="text-center mb-20 relative">
+      <div class="absolute inset-0 flex items-center justify-center opacity-5">
+        <div class="w-96 h-96 rounded-full border border-[#00F5D4] pulse-ring"></div>
+      </div>
+      <div class="floating-element">
+        <h2 class="text-7xl font-black gradient-text mb-6">Featured Projects</h2>
+        <p class="text-xl text-[#bfbfc1] max-w-3xl mx-auto leading-relaxed">
+          Showcasing innovative solutions built with cutting-edge technologies. 
+          Each project demonstrates my passion for creating impactful software.
+        </p>
+      </div>
+      <div class="mt-12 flex justify-center space-x-4">
+        <div class="px-4 py-2 bg-[#00F5D4]/10 border border-[#00F5D4]/30 rounded-full">
+          <span class="text-[#00F5D4] font-semibold">6 Projects</span>
+        </div>
+        <div class="px-4 py-2 bg-[#00F5D4]/10 border border-[#00F5D4]/30 rounded-full">
+          <span class="text-[#00F5D4] font-semibold">Multiple Technologies</span>
+        </div>
+        <div class="px-4 py-2 bg-[#00F5D4]/10 border border-[#00F5D4]/30 rounded-full">
+          <span class="text-[#00F5D4] font-semibold">Open Source</span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Projects Grid -->
+    <section class="grid gap-10 lg:grid-cols-2 xl:grid-cols-3">
+      
+      <!-- Project 1 -->
+      <article class="project-card rounded-2xl p-8 relative stagger-animation" style="animation-delay: 0.1s">
+        <div class="project-number">01</div>
+        <div class="relative z-10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-[#00F5D4] to-[#00c9b9] rounded-xl flex items-center justify-center mb-4">
+              <span class="text-2xl">🔐</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#00F5D4] mb-3">Multilayer Encryption & Decryption</h3>
+          </div>
+          
+          <p class="text-[#bfbfc1] leading-relaxed mb-6 text-sm">
+            A sophisticated cloud-native security solution featuring a 4-layer encryption pipeline with custom FED-based key generation. 
+            Built with AWS Lambda, S3, and ReactJS for maximum scalability and security.
+          </p>
+          
+          <div class="mb-6">
+            <h4 class="text-[#00F5D4] font-semibold mb-3 text-sm">Key Features:</h4>
+            <ul class="space-y-1 text-xs text-[#bfbfc1]">
+              <li>• 4-layer encryption pipeline</li>
+              <li>• Custom FED-based key generation</li>
+              <li>• SHA-256 integrity verification</li>
+              <li>• Cloud-native architecture</li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Python</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">AWS</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">ReactJS</span>
+          </div>
+          
+          <a href="https://github.com/eshabalaji/Multilayer-Encryption-and-Decryption" target="_blank" 
+             class="github-btn text-[#0a0a0a] px-6 py-3 rounded-xl font-bold inline-flex items-center space-x-2">
+            <span>View on GitHub</span>
+            <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 2 -->
+      <article class="project-card rounded-2xl p-8 relative stagger-animation" style="animation-delay: 0.2s">
+        <div class="project-number">02</div>
+        <div class="relative z-10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-[#00F5D4] to-[#00c9b9] rounded-xl flex items-center justify-center mb-4">
+              <span class="text-2xl">📖</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#00F5D4] mb-3">AI Story Book Generator</h3>
+          </div>
+          
+          <p class="text-[#bfbfc1] leading-relaxed mb-6 text-sm">
+            An intelligent storytelling platform that combines Claude 3 Haiku for narrative generation with Stable Diffusion for image creation, 
+            producing complete downloadable PDF storybooks.
+          </p>
+          
+          <div class="mb-6">
+            <h4 class="text-[#00F5D4] font-semibold mb-3 text-sm">Capabilities:</h4>
+            <ul class="space-y-1 text-xs text-[#bfbfc1]">
+              <li>• AI-powered story generation</li>
+              <li>• Dynamic image creation</li>
+              <li>• PDF compilation system</li>
+              <li>• Theme-based customization</li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Python</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Streamlit</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Claude AI</span>
+          </div>
+          
+          <a href="https://github.com/eshabalaji/AI-Based-Story-Book-Generator" target="_blank" 
+             class="github-btn text-[#0a0a0a] px-6 py-3 rounded-xl font-bold inline-flex items-center space-x-2">
+            <span>View on GitHub</span>
+            <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project-card rounded-2xl p-8 relative stagger-animation" style="animation-delay: 0.3s">
+        <div class="project-number">03</div>
+        <div class="relative z-10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-[#00F5D4] to-[#00c9b9] rounded-xl flex items-center justify-center mb-4">
+              <span class="text-2xl">🌿</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#00F5D4] mb-3">Plant Health Detector</h3>
+          </div>
+          
+          <p class="text-[#bfbfc1] leading-relaxed mb-6 text-sm">
+            An AI-powered agricultural solution that detects plant diseases in tomato and potato leaves, 
+            providing early diagnosis and actionable insights for sustainable farming.
+          </p>
+          
+          <div class="mb-6">
+            <h4 class="text-[#00F5D4] font-semibold mb-3 text-sm">Impact:</h4>
+            <ul class="space-y-1 text-xs text-[#bfbfc1]">
+              <li>• Early disease detection</li>
+              <li>• Crop management insights</li>
+              <li>• Sustainable agriculture support</li>
+              <li>• User-friendly web interface</li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Python</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">TensorFlow</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Streamlit</span>
+          </div>
+          
+          <a href="https://github.com/eshabalaji/Plant-Health-Detector" target="_blank" 
+             class="github-btn text-[#0a0a0a] px-6 py-3 rounded-xl font-bold inline-flex items-center space-x-2">
+            <span>View on GitHub</span>
+            <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 4 -->
+      <article class="project-card rounded-2xl p-8 relative stagger-animation" style="animation-delay: 0.4s">
+        <div class="project-number">04</div>
+        <div class="relative z-10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-[#00F5D4] to-[#00c9b9] rounded-xl flex items-center justify-center mb-4">
+              <span class="text-2xl">📊</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#00F5D4] mb-3">AlgoView</h3>
+          </div>
+          
+          <p class="text-[#bfbfc1] leading-relaxed mb-6 text-sm">
+            An interactive algorithm visualizer built with C, OpenGL and GLUT. 
+            Features real-time sorting demonstrations with animated bars and complexity analysis.
+          </p>
+          
+          <div class="mb-6">
+            <h4 class="text-[#00F5D4] font-semibold mb-3 text-sm">Features:</h4>
+            <ul class="space-y-1 text-xs text-[#bfbfc1]">
+              <li>• Real-time visualization</li>
+              <li>• Interactive sorting demos</li>
+              <li>• Complexity analysis display</li>
+              <li>• Educational tool design</li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">C</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">OpenGL</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">GLUT</span>
+          </div>
+          
+          <a href="https://github.com/eshabalaji/AlgoView" target="_blank" 
+             class="github-btn text-[#0a0a0a] px-6 py-3 rounded-xl font-bold inline-flex items-center space-x-2">
+            <span>View on GitHub</span>
+            <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 5 -->
+      <article class="project-card rounded-2xl p-8 relative stagger-animation" style="animation-delay: 0.5s">
+        <div class="project-number">05</div>
+        <div class="relative z-10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-[#00F5D4] to-[#00c9b9] rounded-xl flex items-center justify-center mb-4">
+              <span class="text-2xl">🎹</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#00F5D4] mb-3">Virtual Piano</h3>
+          </div>
+          
+          <p class="text-[#bfbfc1] leading-relaxed mb-6 text-sm">
+            A feature-rich virtual piano application built with Java and Swing. 
+            Offers responsive key detection, customizable sound synthesis, and an intuitive interface for music creation.
+          </p>
+          
+          <div class="mb-6">
+            <h4 class="text-[#00F5D4] font-semibold mb-3 text-sm">Features:</h4>
+            <ul class="space-y-1 text-xs text-[#bfbfc1]">
+              <li>• Responsive key detection</li>
+              <li>• Customizable sound synthesis</li>
+              <li>• User-friendly interface</li>
+              <li>• Object-oriented design</li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Java</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Swing</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Audio API</span>
+          </div>
+          
+          <a href="https://github.com/eshabalaji/virtual-piano" target="_blank" 
+             class="github-btn text-[#0a0a0a] px-6 py-3 rounded-xl font-bold inline-flex items-center space-x-2">
+            <span>View on GitHub</span>
+            <span>→</span>
+          </a>
+        </div>
+      </article>
+
+      <!-- Project 6 -->
+      <article class="project-card rounded-2xl p-8 relative stagger-animation" style="animation-delay: 0.6s">
+        <div class="project-number">06</div>
+        <div class="relative z-10">
+          <div class="mb-6">
+            <div class="w-16 h-16 bg-gradient-to-br from-[#00F5D4] to-[#00c9b9] rounded-xl flex items-center justify-center mb-4">
+              <span class="text-2xl">⌚</span>
+            </div>
+            <h3 class="text-2xl font-bold text-[#00F5D4] mb-3">Smart Watch Data Analyzer</h3>
+          </div>
+          
+          <p class="text-[#bfbfc1] leading-relaxed mb-6 text-sm">
+            A comprehensive health monitoring system that analyzes sleep patterns, tracks heart rate anomalies, 
+            and provides emergency SOS alerts for critical health situations.
+          </p>
+          
+          <div class="mb-6">
+            <h4 class="text-[#00F5D4] font-semibold mb-3 text-sm">Health Monitoring:</h4>
+            <ul class="space-y-1 text-xs text-[#bfbfc1]">
+              <li>• Sleep stage detection</li>
+              <li>• Heart rate monitoring</li>
+              <li>• Emergency SOS alerts</li>
+              <li>• Health analytics dashboard</li>
+            </ul>
+          </div>
+          
+          <div class="flex flex-wrap gap-2 mb-6">
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Python</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Streamlit</span>
+            <span class="tech-tag text-[#0a0a0a] px-3 py-1 rounded-full text-xs font-bold">Data Analysis</span>
+          </div>
+          
+          <a href="https://github.com/eshabalaji/SMART-WATCH-DATA-ANALYSER" target="_blank" 
+             class="github-btn text-[#0a0a0a] px-6 py-3 rounded-xl font-bold inline-flex items-center space-x-2">
+            <span>View on GitHub</span>
+            <span>→</span>
+          </a>
+        </div>
+      </article>
+      
+    </section>
+
+    <!-- Call to Action -->
+    <section class="text-center mt-20 p-12 bg-gradient-to-r from-[#151517] to-[#1a1a1c] rounded-3xl border border-[#00F5D4]/30">
+      <h3 class="text-4xl font-bold gradient-text mb-4">Ready to Collaborate?</h3>
+      <p class="text-[#bfbfc1] text-lg mb-8 max-w-2xl mx-auto">
+        These projects represent just the beginning. I'm always exploring new technologies and building innovative solutions.
+      </p>
+      <div class="flex justify-center space-x-6">
+        <a href="mailto:your.email@example.com" class="github-btn text-[#0a0a0a] px-8 py-4 rounded-xl font-bold inline-flex items-center space-x-2">
+          <span>Get In Touch</span>
+          <span>→</span>
+        </a>
+        <a href="https://github.com/eshabalaji" target="_blank" class="border border-[#00F5D4] text-[#00F5D4] px-8 py-4 rounded-xl font-bold hover:bg-[#00F5D4] hover:text-[#0a0a0a] transition-all duration-300">
+          View All Projects
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="text-center mt-20 py-8 border-t border-[#00F5D4]/20 text-sm text-[#bfbfc1] bg-black/50">
+    <div class="max-w-7xl mx-auto px-6">
+      <p class="mb-4">© 2025 Esha Balaji. Crafted with passion and precision.</p>
+      <div class="flex justify-center space-x-6">
+        <a href="#" class="hover:text-[#00F5D4] transition-colors">LinkedIn</a>
+        <a href="#" class="hover:text-[#00F5D4] transition-colors">GitHub</a>
+        <a href="#" class="hover:text-[#00F5D4] transition-colors">Email</a>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Stagger animation for project cards
+    const cards = document.querySelectorAll('.stagger-animation');
+    cards.forEach((card, index) => {
+      setTimeout(() => {
+        card.style.animationPlayState = 'running';
+      }, index * 100);
+    });
+
+    // Add smooth scrolling
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  </script>
+
+</body>
+</html>

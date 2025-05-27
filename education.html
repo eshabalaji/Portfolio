@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Esha Balaji | Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet" />
+  <style>
+    body { 
+      font-family: 'Inter', sans-serif; 
+      overflow-x: hidden;
+    }
+    
+    .gradient-bg {
+      background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 50%, #0a0a0a 100%);
+    }
+    
+    .glow-effect {
+      box-shadow: 0 0 20px rgba(0, 245, 212, 0.3);
+    }
+    
+    .hover-card {
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .hover-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(0, 245, 212, 0.1), transparent);
+      transition: left 0.5s;
+    }
+    
+    .hover-card:hover::before {
+      left: 100%;
+    }
+    
+    .hover-card:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 20px 40px rgba(0, 245, 212, 0.3);
+      border-color: #00F5D4;
+    }
+    
+    .floating-animation {
+      animation: float 6s ease-in-out infinite;
+    }
+    
+    @keyframes float {
+      0%, 100% { transform: translateY(0px); }
+      50% { transform: translateY(-20px); }
+    }
+    
+    .typing-animation {
+      overflow: hidden;
+      border-right: 3px solid #00F5D4;
+      animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+    }
+    
+    @keyframes typing {
+      from { width: 0; }
+      to { width: 100%; }
+    }
+    
+    @keyframes blink-caret {
+      from, to { border-color: transparent; }
+      50% { border-color: #00F5D4; }
+    }
+    
+    .skill-bar {
+      height: 8px;
+      background: #2a2a2a;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    
+    .skill-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #00F5D4, #00b8a9);
+      border-radius: 4px;
+      transition: width 2s ease-in-out;
+    }
+    
+    .timeline-line {
+      background: linear-gradient(180deg, #00F5D4 0%, transparent 100%);
+    }
+    
+    .pulse-dot {
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.1); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+    
+    .slide-in-left {
+      animation: slideInLeft 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateX(-50px);
+    }
+    
+    .slide-in-right {
+      animation: slideInRight 0.8s ease-out forwards;
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    
+    @keyframes slideInLeft {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    @keyframes slideInRight {
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+    
+    .interactive-button {
+      background: linear-gradient(45deg, #00F5D4, #00b8a9);
+      transition: all 0.3s ease;
+    }
+    
+    .interactive-button:hover {
+      background: linear-gradient(45deg, #00b8a9, #00F5D4);
+      transform: translateY(-2px);
+      box-shadow: 0 10px 20px rgba(0, 245, 212, 0.4);
+    }
+  </style>
+</head>
+<body class="gradient-bg text-[#f4f4f4] min-h-screen">
+
+ <!-- Navbar -->
+  <nav class="bg-black/80 backdrop-blur-md border-b border-[#00F5D4]/20 fixed top-0 w-full z-50">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+      <h1 class="text-3xl font-bold text-[#00F5D4]">Esha Balaji</h1>
+      <div class="space-x-8">
+        <a href="index.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          Home
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="about.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          About
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="education.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          Education
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="projects.html" class="text-[#00F5D4] font-bold relative">
+          Projects
+          <span class="absolute -bottom-1 left-0 w-full h-0.5 bg-[#00F5D4]"></span>
+        </a>
+        <a href="experience.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          Experience
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+        <a href="certifications.html" class="text-[#f4f4f4] hover:text-[#00F5D4] transition-all duration-300 font-medium relative group">
+          Certifications
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-[#00F5D4] transition-all duration-300 group-hover:w-full"></span>
+        </a>
+      </div>
+    </div>
+  </nav>
+  <!-- Header -->
+  <section class="pt-32 max-w-4xl mx-auto px-4 text-center">
+    <h2 class="text-5xl font-bold text-[#00F5D4] typing-animation mb-4">Education Journey</h2>
+    <p class="mt-4 text-[#f4f4f4] max-w-xl mx-auto text-lg opacity-0" id="subtitle">
+      Discover my academic path and achievements through an interactive timeline
+    </p>
+  </section>
+
+  <!-- Stats Section -->
+  <section class="mt-16 max-w-6xl mx-auto px-4">
+    <div class="grid grid-cols-3 gap-8 text-center">
+      <div class="hover-card bg-[#0a0a0a]/50 border border-[#00F5D4]/30 p-6 rounded-xl">
+        <div class="text-3xl font-bold text-[#00F5D4]" id="cgpa-counter">0.0</div>
+        <p class="text-sm text-[#f4f4f4] mt-2">Current CGPA</p>
+      </div>
+      <div class="hover-card bg-[#0a0a0a]/50 border border-[#00F5D4]/30 p-6 rounded-xl">
+        <div class="text-3xl font-bold text-[#00F5D4]" id="year-counter">0</div>
+        <p class="text-sm text-[#f4f4f4] mt-2">Years of Study</p>
+      </div>
+      <div class="hover-card bg-[#0a0a0a]/50 border border-[#00F5D4]/30 p-6 rounded-xl">
+        <div class="text-3xl font-bold text-[#00F5D4]" id="course-counter">0</div>
+        <p class="text-sm text-[#f4f4f4] mt-2">Courses Completed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Interactive Timeline -->
+  <section class="mt-20 max-w-6xl mx-auto px-4">
+    <h3 class="text-3xl font-bold text-center text-[#00F5D4] mb-12">Academic Timeline</h3>
+    
+    <div class="relative">
+      <!-- Timeline Line -->
+      <div class="timeline-line absolute left-1/2 transform -translate-x-1/2 w-1 h-full"></div>
+      
+      <!-- Education Items -->
+      <div class="space-y-16">
+        <!-- Current Education -->
+        <div class="flex items-center relative">
+          <div class="slide-in-left flex-1 pr-8 text-right">
+            <div class="hover-card bg-[#0a0a0a] border border-[#00F5D4] p-8 rounded-xl cursor-pointer" onclick="toggleDetails('current')">
+              <h3 class="text-2xl font-semibold text-[#00F5D4] mb-2">Bachelor of Engineering</h3>
+              <p class="text-[#f4f4f4] italic text-lg mb-2">Computer Science & Engineering</p>
+              <p class="text-[#f4f4f4] font-semibold">BNM Institute of Technology</p>
+              <p class="text-sm mt-2 text-[#00F5D4]">2022 - Present</p>
+              <button class="interactive-button text-[#0a0a0a] px-4 py-2 rounded-lg mt-4 text-sm font-semibold">
+                View Details
+              </button>
+            </div>
+            
+            <!-- Detailed Info (Hidden by default) -->
+            <div id="current-details" class="mt-4 bg-[#1a1a1a] border border-[#00F5D4]/30 p-6 rounded-xl hidden">
+              <h4 class="text-[#00F5D4] font-semibold mb-4">Key Achievements & Courses</h4>
+              <div class="space-y-3">
+                <div>
+                  <div class="flex justify-between mb-1">
+                    <span class="text-sm text-[#f4f4f4]">Academic Performance</span>
+                    <span class="text-sm text-[#00F5D4]">93%</span>
+                  </div>
+                  <div class="skill-bar">
+                    <div class="skill-progress" style="width: 93%"></div>
+                  </div>
+                </div>
+                
+                <div class="grid grid-cols-2 gap-4 mt-4">
+                  <div class="text-sm">
+                    <p class="text-[#00F5D4] font-semibold">Core Subjects:</p>
+                    <ul class="text-[#f4f4f4] mt-1 space-y-1">
+                      <li>• Data Structures & Algorithms</li>
+                      <li>• Cloud Computing</li>
+                      <li>• AI & Machine Learning</li>
+                      <li>• Software Engineering</li>
+                    </ul>
+                  </div>
+                  <div class="text-sm">
+                    <p class="text-[#00F5D4] font-semibold">Projects:</p>
+                    <ul class="text-[#f4f4f4] mt-1 space-y-1">
+                      <li>• Web Development</li>
+                      <li>• Database Management</li>
+                      <li>• Mobile Applications</li>
+                      <li>• Research Projects</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Timeline Dot -->
+          <div class="pulse-dot absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#00F5D4] rounded-full border-4 border-[#0a0a0a] z-10"></div>
+          
+          <div class="flex-1 pl-8"></div>
+        </div>
+        
+        <!-- Previous Education -->
+        <div class="flex items-center relative">
+          <div class="flex-1 pr-8"></div>
+          
+          <!-- Timeline Dot -->
+          <div class="pulse-dot absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-[#00F5D4] rounded-full border-4 border-[#0a0a0a] z-10"></div>
+          
+          <div class="slide-in-right flex-1 pl-8">
+            <div class="hover-card bg-[#0a0a0a] border border-[#00F5D4] p-8 rounded-xl cursor-pointer" onclick="toggleDetails('previous')">
+              <h3 class="text-2xl font-semibold text-[#00F5D4] mb-2">Higher Secondary Certificate</h3>
+              <p class="text-[#f4f4f4] italic text-lg mb-2">Science Stream</p>
+              <p class="text-[#f4f4f4] font-semibold">Base PU College</p>
+              <p class="text-sm mt-2 text-[#00F5D4]">2020 - 2022</p>
+              <button class="interactive-button text-[#0a0a0a] px-4 py-2 rounded-lg mt-4 text-sm font-semibold">
+                View Details
+              </button>
+            </div>
+            
+            <!-- Detailed Info (Hidden by default) -->
+            <div id="previous-details" class="mt-4 bg-[#1a1a1a] border border-[#00F5D4]/30 p-6 rounded-xl hidden">
+              <h4 class="text-[#00F5D4] font-semibold mb-4">Subjects & Performance</h4>
+              <div class="grid grid-cols-2 gap-6">
+                <div>
+                  <p class="text-[#00F5D4] font-semibold mb-2">Core Subjects:</p>
+                  <ul class="text-[#f4f4f4] space-y-1 text-sm">
+                    <li>• Mathematics</li>
+                    <li>• Physics</li>
+                    <li>• Chemistry</li>
+                    <li>• Computer Science</li>
+                  </ul>
+                </div>
+                <div>
+                  <p class="text-[#00F5D4] font-semibold mb-2">Key Achievements:</p>
+                  <ul class="text-[#f4f4f4] space-y-1 text-sm">
+                    <li>• Strong Science Foundation</li>
+                    <li>• Programming Fundamentals</li>
+                    <li>• Mathematical Excellence</li>
+                    <li>• Analytical Thinking</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="text-center mt-20 py-8 border-t border-[#00F5D4] text-sm text-[#f4f4f4]">
+    <p>© 2025 Esha Balaji. All rights reserved.</p>
+    <p class="mt-2 text-[#00F5D4]">Built with passion and code ❤️</p>
+  </footer>
+
+  <script>
+    // Animation on scroll
+    function animateOnScroll() {
+      const elements = document.querySelectorAll('.slide-in-left, .slide-in-right');
+      elements.forEach(element => {
+        const elementTop = element.getBoundingClientRect().top;
+        const elementVisible = 150;
+        
+        if (elementTop < window.innerHeight - elementVisible) {
+          element.style.animationDelay = '0.2s';
+          element.classList.add('animate');
+        }
+      });
+    }
+
+    // Counter animations
+    function animateCounters() {
+      // CGPA Counter
+      let cgpaCount = 0;
+      const cgpaTarget = 9.3;
+      const cgpaCounter = document.getElementById('cgpa-counter');
+      const cgpaInterval = setInterval(() => {
+        cgpaCount += 0.1;
+        cgpaCounter.textContent = cgpaCount.toFixed(1);
+        if (cgpaCount >= cgpaTarget) {
+          clearInterval(cgpaInterval);
+          cgpaCounter.textContent = cgpaTarget.toFixed(1);
+        }
+      }, 50);
+
+      // Year Counter
+      let yearCount = 0;
+      const yearTarget = 3;
+      const yearCounter = document.getElementById('year-counter');
+      const yearInterval = setInterval(() => {
+        yearCount++;
+        yearCounter.textContent = yearCount;
+        if (yearCount >= yearTarget) {
+          clearInterval(yearInterval);
+        }
+      }, 200);
+
+      // Course Counter
+      let courseCount = 0;
+      const courseTarget = 15;
+      const courseCounter = document.getElementById('course-counter');
+      const courseInterval = setInterval(() => {
+        courseCount++;
+        courseCounter.textContent = courseCount;
+        if (courseCount >= courseTarget) {
+          clearInterval(courseInterval);
+        }
+      }, 100);
+    }
+
+    // Animate skill bars
+    function animateSkills() {
+      const skillItems = document.querySelectorAll('.skill-item');
+      skillItems.forEach((item, index) => {
+        const skillLevel = item.dataset.skill;
+        const progressBar = item.querySelector('.skill-progress');
+        
+        setTimeout(() => {
+          progressBar.style.width = skillLevel + '%';
+        }, index * 200);
+      });
+    }
+
+    // Toggle details function
+    function toggleDetails(section) {
+      const details = document.getElementById(section + '-details');
+      if (details.classList.contains('hidden')) {
+        details.classList.remove('hidden');
+        details.style.animation = 'slideInRight 0.5s ease-out forwards';
+      } else {
+        details.classList.add('hidden');
+      }
+    }
+
+    // Show contact info
+    function showContactInfo() {
+      alert('📧 Email: esha.balaji@example.com\n📱 LinkedIn: /in/eshabalaji\n🌐 Portfolio: Coming soon!');
+    }
+
+    // Typing animation for subtitle
+    function typeSubtitle() {
+      const subtitle = document.getElementById('subtitle');
+      const text = "Discover my academic path and achievements through an interactive timeline";
+      let i = 0;
+      
+      setTimeout(() => {
+        subtitle.style.opacity = '1';
+        const typeInterval = setInterval(() => {
+          subtitle.textContent = text.slice(0, i);
+          i++;
+          if (i > text.length) {
+            clearInterval(typeInterval);
+          }
+        }, 50);
+      }, 3000);
+    }
+
+    // Initialize animations
+    window.addEventListener('load', () => {
+      setTimeout(animateCounters, 1000);
+      setTimeout(animateSkills, 2000);
+      typeSubtitle();
+    });
+
+    window.addEventListener('scroll', animateOnScroll);
+
+    // Add floating particles effect
+    function createParticle() {
+      const particle = document.createElement('div');
+      particle.style.cssText = `
+        position: fixed;
+        width: 4px;
+        height: 4px;
+        background: #00F5D4;
+        border-radius: 50%;
+        pointer-events: none;
+        opacity: 0.6;
+        animation: float 4s linear infinite;
+        left: ${Math.random() * 100}vw;
+        top: 100vh;
+        z-index: 1;
+      `;
+      
+      document.body.appendChild(particle);
+      
+      setTimeout(() => {
+        particle.remove();
+      }, 4000);
+    }
+
+    // Create particles periodically
+    setInterval(createParticle, 2000);
+
+    // Add CSS for particle animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes float {
+        to {
+          transform: translateY(-100vh) rotate(360deg);
+          opacity: 0;
+        }
+      }
+    `;
+    document.head.appendChild(style);
+  </script>
+
+</body>
+</html>
