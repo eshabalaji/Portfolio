@@ -76,7 +76,6 @@
     .cert-icon {
       width: 50px;
       height: 50px;
-      background: linear-gradient(135deg, #00F5D4, #00C5A3);
       border-radius: 12px;
       display: flex;
       align-items: center;
@@ -89,8 +88,9 @@
     }
     
     .cert-card:hover .cert-icon {
-      transform: scale(1.1) rotateY(180deg);
+      transform: scale(1.1) rotateY(0deg);
     }
+
     
     .skill-tag {
       background: rgba(0, 245, 212, 0.1);
@@ -266,12 +266,32 @@
 
   <!-- Certification Cards -->
   <section class="mt-16 max-w-6xl mx-auto px-4 grid gap-8 sm:grid-cols-2 lg:grid-cols-3 relative z-10">
+
+      <!-- PwC Launchpad -->
+    <article class="cert-card p-6 rounded-xl cursor-pointer relative">
+      <div class="interactive-bg"></div>
+      <div class="floating-badge">2025</div>
+      <div class="cert-icon"><img src="pwc_logo.png"></div>
+      <h3 class="text-xl font-semibold text-[#00F5D4] mb-3">PwC Launchpad 2025</h3>
+      <p class="text-[#F4F4F4] mb-4">Comprehensive IT and development program</p>
+      <div class="flex flex-wrap">
+        <span class="skill-tag">IT Fundamentals</span>
+        <span class="skill-tag">RDBMS</span>
+        <span class="skill-tag">Java</span>
+        <span class="skill-tag">DevOps</span>
+        <span class="skill-tag">Cloud</span>
+      </div>
+      <div class="progress-bar">
+        <div class="progress-fill"></div>
+      </div><a href="https://pwc.tekstac.com/blocks/tekbadges/badge.php?id=32596" target="_blank" class="inline-block mt-4 text-[#00F5D4] hover:underline font-semibold">View Badge →</a>
+    </article>
     
+
     <!-- Samsung Innovation Campus -->
     <article class="cert-card p-6 rounded-xl cursor-pointer relative">
       <div class="interactive-bg"></div>
       <div class="floating-badge">2024</div>
-      <div class="cert-icon">S</div>
+      <div class="cert-icon"><img src="samsung_logo.png"></div>
       <h3 class="text-xl font-semibold text-[#00F5D4] mb-3">Samsung Innovation Campus</h3>
       <p class="text-[#F4F4F4] mb-4">Coding and programming fundamentals</p>
       
@@ -291,8 +311,8 @@
     <!-- NPTEL -->
     <article class="cert-card p-6 rounded-xl cursor-pointer relative">
       <div class="interactive-bg"></div>
-      <div class="floating-badge">2024</div>
-      <div class="cert-icon">N</div>
+      <div class="floating-badge">2023</div>
+      <div class="cert-icon"><img src="NPTEL_logo.png"></div>
       <h3 class="text-xl font-semibold text-[#00F5D4] mb-3">NPTEL</h3>
       <p class="text-[#F4F4F4] mb-4">Programming fundamentals and algorithms</p>
       
@@ -308,34 +328,12 @@
       <a href="certificates_nptel.pdf" class="inline-block mt-4 text-[#00F5D4] hover:underline font-semibold">View Certificate →</a>
     </article>
 
-    <!-- PwC Launchpad -->
-    <article class="cert-card p-6 rounded-xl cursor-pointer relative">
-      <div class="interactive-bg"></div>
-      <div class="floating-badge">2025</div>
-      <div class="cert-icon">P</div>
-      <h3 class="text-xl font-semibold text-[#00F5D4] mb-3">PwC Launchpad 2025</h3>
-      <p class="text-[#F4F4F4] mb-4">Comprehensive IT and development program</p>
-      
-      <div class="flex flex-wrap">
-        <span class="skill-tag">IT Fundamentals</span>
-        <span class="skill-tag">RDBMS</span>
-        <span class="skill-tag">Java</span>
-        <span class="skill-tag">DevOps</span>
-        <span class="skill-tag">Cloud</span>
-      </div>
-      
-      <div class="progress-bar">
-        <div class="progress-fill"></div>
-      </div>
-      
-      <a href="https://pwc.tekstac.com/blocks/tekbadges/badge.php?id=32596" target="_blank" class="inline-block mt-4 text-[#00F5D4] hover:underline font-semibold">View Badge →</a>
-    </article>
 
     <!-- Web Development Bootcamp -->
     <article class="cert-card p-6 rounded-xl cursor-pointer relative">
       <div class="interactive-bg"></div>
       <div class="floating-badge">Dec 2024</div>
-      <div class="cert-icon">W</div>
+      <div class="cert-icon"><img src="udemy.png"></div>
       <h3 class="text-xl font-semibold text-[#00F5D4] mb-3">Web Development Bootcamp</h3>
       <p class="text-[#F4F4F4] mb-4">Udemy - Full-stack web development</p>
       
@@ -356,8 +354,8 @@
     <!-- Postman API -->
     <article class="cert-card p-6 rounded-xl cursor-pointer relative">
       <div class="interactive-bg"></div>
-      <div class="floating-badge">2024</div>
-      <div class="cert-icon">A</div>
+      <div class="floating-badge">2025</div>
+      <div class="cert-icon"><img src="postman_log.png"></div>
       <h3 class="text-xl font-semibold text-[#00F5D4] mb-3">Postman API Fundamentals</h3>
       <p class="text-[#F4F4F4] mb-4">API testing and development</p>
       
@@ -377,8 +375,8 @@
     <!-- Spring Framework -->
     <article class="cert-card p-6 rounded-xl cursor-pointer relative">
       <div class="interactive-bg"></div>
-      <div class="floating-badge">2024</div>
-      <div class="cert-icon">S</div>
+      <div class="floating-badge">2025</div>
+      <div class="cert-icon"><img src="simplilearn_logo.png"></div>
       <h3 class="text-xl font-semibold text-[#00F5D4] mb-3">Spring Framework</h3>
       <p class="text-[#F4F4F4] mb-4">Simplilearn - Enterprise Java development</p>
       
